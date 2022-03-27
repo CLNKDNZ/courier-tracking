@@ -3,9 +3,6 @@ server:
   servlet:
     context-path: /courier-tracking/api/v1
 
-java:
-  runtime:
-    version= 11:
 
 spring:
   profiles:
