@@ -1,11 +1,13 @@
 package com.migros.couriertracking.service;
 
+import com.migros.couriertracking.exceptions.CourierRelationException;
 import com.migros.couriertracking.exceptions.CourierTrackingRuleException;
 import com.migros.couriertracking.model.dto.request.CourierEntryRequest;
 import com.migros.couriertracking.model.dto.response.CourierEntryResponse;
 import com.migros.couriertracking.model.entitiy.Store;
 import com.migros.couriertracking.repository.CourierEntryRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -42,8 +44,12 @@ public class CourierTrackingService {
 
     public void create(CourierEntryRequest courierGeoLocationRequest) {
         var entity = courierEntryRequestToCourierEntryEntity(courierGeoLocationRequest);
-        courierEntryRepository.save(entity);
 
+        try {
+            courierEntryRepository.save(entity);
+        } catch (DataIntegrityViolationException e) {
+            throw new CourierRelationException();
+        }
 
     }
 

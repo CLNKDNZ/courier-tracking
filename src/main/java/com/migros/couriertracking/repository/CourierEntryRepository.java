@@ -18,5 +18,4 @@ public interface CourierEntryRepository extends JpaRepository<CourierEntry, Long
     Optional<LocalDateTime> getLastEntryDateTime(@Param("courierId") Long courierId);
 
 
-
 }
