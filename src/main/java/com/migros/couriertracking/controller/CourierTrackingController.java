@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import static com.migros.couriertracking.constants.Constant.TRACKING_SUCCESS_MESSAGE;
+
 @RestController
 @RequestMapping("track")
 @RequiredArgsConstructor
@@ -23,7 +25,7 @@ public class CourierTrackingController {
     @ApiOperation(value = "Track Courier By Lat Lon")
     public ResponseEntity<CourierEntryResponse> trackByLocation(@RequestBody CourierEntryRequest courierGeoLocationRequest) {
         var courierTrackingResponse = courierTrackingService.track(courierGeoLocationRequest);
-        return new ResponseEntity(courierTrackingResponse, HttpStatus.CREATED);
+        return new ResponseEntity(TRACKING_SUCCESS_MESSAGE, HttpStatus.CREATED);
     }
 
     @PostMapping

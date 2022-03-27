@@ -10,4 +10,5 @@ public interface Constant {
     String COURIER_EXCEPTION_RULE_EXCEPTION = "Request is not suitable for tracking rule";
     String STORE_CREATE_EXCEPTION = "Store can not create";
     String NO_RELATION_COURIER_EXCEPTION = "No courier for tracking. Please create courier first";
+    String TRACKING_SUCCESS_MESSAGE = "Tracking Successful. Added to Datasource";
 }
