@@ -17,7 +17,7 @@ The app deployed to heroku which is online web server. You can send web request 
 **ADD NEW COURIER**
 - METHOD : POST  
 - HEROKU URL : https://courier-tracking.herokuapp.com/courier-tracking/api/v1/courier
-- LOCAL URL : http://localhost:8080/courier
+- LOCAL URL : http://localhost:8080/courier-tracking/api/v1/courier
 ```bash
 {
     "name": "deniz",
@@ -30,7 +30,7 @@ The app deployed to heroku which is online web server. You can send web request 
 **ADD NEW STORE**
 - METHOD : POST  
 - HEROKU URL : https://courier-tracking.herokuapp.com/courier-tracking/api/v1/store
-- LOCAL URL : http://localhost:8080/store
+- LOCAL URL : http://localhost:8080/courier-tracking/api/v1/store
 ```bash
 
 {
@@ -45,7 +45,7 @@ The app deployed to heroku which is online web server. You can send web request 
 **TRACKING CONTROL**
 - METHOD : POST  
 - HEROKU URL : https://courier-tracking.herokuapp.com/courier-tracking/api/v1/track
-- LOCAL URL : http://localhost:8080/track
+- LOCAL URL : http://localhost:8080/courier-tracking/api/v1track
 ```bash
 {
     "courier": {
